@@ -7,12 +7,43 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "JobQueue.h"
 
-@interface OrderedJobsKataTests : XCTestCase
-
+@interface OrderedJobsKataTests : XCTestCase {
+    JobQueue* testQueue;
+}
 @end
 
 @implementation OrderedJobsKataTests
+
+- (void)setUp
+{
+    testQueue = [[JobQueue alloc] init];
+}
+
+- (void)testEmptyQueueReturnEmptyString
+{
+    XCTAssertEqualObjects([testQueue sortedJobs], @"");
+}
+
+- (void)testJobsCanBeAdded
+{
+    NSString* testJob = @"a";
+    [testQueue addJob:testJob];
+    
+    XCTAssertEqualObjects(testJob, [testQueue sortedJobs]);
+}
+
+- (void)testIndependentJobsAreExecutedInTeSameOrderTheyWereAdded
+{
+    NSString* firstJob = @"a";
+    NSString* secondJob = @"b";
+    
+    [testQueue addJob:firstJob];
+    [testQueue addJob:secondJob];
+    
+    XCTAssertEqualObjects([testQueue sortedJobs], @"ab", @"Jobs should appear in the same order they were added");
+}
 
 
 @end
