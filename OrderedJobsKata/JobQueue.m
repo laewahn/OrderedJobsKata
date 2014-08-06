@@ -35,10 +35,15 @@
 
 -(void) addJob:(NSString *)dependentJob dependingOnJob:(NSString *)independentJob;
 {
-    [self.jobs addObject:independentJob];
+    if (![self.jobs containsObject:independentJob]) {
+        [self.jobs addObject:independentJob];
+    }
     
     NSUInteger indexOfIndependentJob = [self.jobs indexOfObject:independentJob];
     [self.jobs insertObject:dependentJob atIndex:indexOfIndependentJob+1];
 }
+
+- (void)insertJob:(NSString *)job afterDependency:(NSString *)dependency
+{}
 
 @end

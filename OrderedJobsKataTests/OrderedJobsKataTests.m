@@ -11,6 +11,9 @@
 
 @interface OrderedJobsKataTests : XCTestCase {
     JobQueue* testQueue;
+    
+    NSString* firstJob;
+    NSString* secondJob;
 }
 @end
 
@@ -19,6 +22,9 @@
 - (void)setUp
 {
     testQueue = [[JobQueue alloc] init];
+    
+    firstJob = @"a";
+    secondJob = @"b";
 }
 
 - (void)testEmptyQueueReturnEmptyString
@@ -28,17 +34,13 @@
 
 - (void)testJobsCanBeAdded
 {
-    NSString* testJob = @"a";
-    [testQueue addJob:testJob];
+    [testQueue addJob:firstJob];
     
-    XCTAssertEqualObjects(testJob, [testQueue sortedJobs]);
+    XCTAssertEqualObjects(firstJob, [testQueue sortedJobs]);
 }
 
 - (void)testIndependentJobsAreExecutedInTeSameOrderTheyWereAdded
 {
-    NSString* firstJob = @"a";
-    NSString* secondJob = @"b";
-    
     [testQueue addJob:firstJob];
     [testQueue addJob:secondJob];
     
@@ -47,11 +49,19 @@
 
 - (void)testJobsCanBeAddedWithDependencies
 {
-    NSString* firstJob = @"a";
-    NSString* secondJob = @"b";
-    
     [testQueue addJob:secondJob dependingOnJob:firstJob];
     XCTAssertEqualObjects([testQueue sortedJobs], @"ab", @"a should appear before b");
+}
+
+- (void)testDependenciesWithMultipleDependentJobs
+{
+    NSString* thirdJob = @"c";
+    
+    [testQueue addJob:firstJob];
+    [testQueue addJob:secondJob dependingOnJob:firstJob];
+    [testQueue addJob:thirdJob dependingOnJob:secondJob];
+    
+    XCTAssertEqualObjects([testQueue sortedJobs], @"abc");
 }
 
 
