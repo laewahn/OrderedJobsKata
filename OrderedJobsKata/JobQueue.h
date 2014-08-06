@@ -12,5 +12,5 @@
 
 -(NSString *) sortedJobs;
 -(void) addJob:(NSString *)aJob;
-
+-(void) addJob:(NSString *)dependentJob dependingOnJob:(NSString *)independentJob;
 @end

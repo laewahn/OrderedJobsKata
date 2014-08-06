@@ -9,7 +9,6 @@
 #import "JobQueue.h"
 
 @interface JobQueue ()
-@property BOOL jobAdded;
 @property (strong) NSMutableArray* jobs;
 @end
 
@@ -32,6 +31,14 @@
 -(void) addJob:(NSString *)aJob
 {
     [self.jobs addObject:aJob];
+}
+
+-(void) addJob:(NSString *)dependentJob dependingOnJob:(NSString *)independentJob;
+{
+    [self.jobs addObject:independentJob];
+    
+    NSUInteger indexOfIndependentJob = [self.jobs indexOfObject:independentJob];
+    [self.jobs insertObject:dependentJob atIndex:indexOfIndependentJob+1];
 }
 
 @end

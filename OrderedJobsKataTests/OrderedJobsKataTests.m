@@ -45,5 +45,14 @@
     XCTAssertEqualObjects([testQueue sortedJobs], @"ab", @"Jobs should appear in the same order they were added");
 }
 
+- (void)testJobsCanBeAddedWithDependencies
+{
+    NSString* firstJob = @"a";
+    NSString* secondJob = @"b";
+    
+    [testQueue addJob:secondJob dependingOnJob:firstJob];
+    XCTAssertEqualObjects([testQueue sortedJobs], @"ab", @"a should appear before b");
+}
+
 
 @end
