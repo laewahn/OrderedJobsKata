@@ -1,0 +1,481 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7208AEF9199260E0000B70FC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7208AEF8199260E0000B70FC /* Cocoa.framework */; };
+		7208AF03199260E0000B70FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7208AF01199260E0000B70FC /* InfoPlist.strings */; };
+		7208AF05199260E0000B70FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7208AF04199260E0000B70FC /* main.m */; };
+		7208AF09199260E0000B70FC /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7208AF07199260E0000B70FC /* Credits.rtf */; };
+		7208AF0C199260E0000B70FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7208AF0B199260E0000B70FC /* AppDelegate.m */; };
+		7208AF0F199260E0000B70FC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7208AF0D199260E0000B70FC /* MainMenu.xib */; };
+		7208AF11199260E0000B70FC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7208AF10199260E0000B70FC /* Images.xcassets */; };
+		7208AF18199260E0000B70FC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7208AF17199260E0000B70FC /* XCTest.framework */; };
+		7208AF19199260E0000B70FC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7208AEF8199260E0000B70FC /* Cocoa.framework */; };
+		7208AF21199260E0000B70FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7208AF1F199260E0000B70FC /* InfoPlist.strings */; };
+		7208AF23199260E0000B70FC /* OrderedJobsKataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7208AF22199260E0000B70FC /* OrderedJobsKataTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7208AF1A199260E0000B70FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7208AEED199260E0000B70FC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7208AEF4199260E0000B70FC;
+			remoteInfo = OrderedJobsKata;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7208AEF5199260E0000B70FC /* OrderedJobsKata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderedJobsKata.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7208AEF8199260E0000B70FC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		7208AEFB199260E0000B70FC /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		7208AEFC199260E0000B70FC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7208AEFD199260E0000B70FC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7208AF00199260E0000B70FC /* OrderedJobsKata-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OrderedJobsKata-Info.plist"; sourceTree = "<group>"; };
+		7208AF02199260E0000B70FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7208AF04199260E0000B70FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7208AF06199260E0000B70FC /* OrderedJobsKata-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OrderedJobsKata-Prefix.pch"; sourceTree = "<group>"; };
+		7208AF08199260E0000B70FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		7208AF0A199260E0000B70FC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7208AF0B199260E0000B70FC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7208AF0E199260E0000B70FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		7208AF10199260E0000B70FC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7208AF16199260E0000B70FC /* OrderedJobsKataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrderedJobsKataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7208AF17199260E0000B70FC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		7208AF1E199260E0000B70FC /* OrderedJobsKataTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OrderedJobsKataTests-Info.plist"; sourceTree = "<group>"; };
+		7208AF20199260E0000B70FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7208AF22199260E0000B70FC /* OrderedJobsKataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderedJobsKataTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7208AEF2199260E0000B70FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7208AEF9199260E0000B70FC /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7208AF13199260E0000B70FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7208AF19199260E0000B70FC /* Cocoa.framework in Frameworks */,
+				7208AF18199260E0000B70FC /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7208AEEC199260E0000B70FC = {
+			isa = PBXGroup;
+			children = (
+				7208AEFE199260E0000B70FC /* OrderedJobsKata */,
+				7208AF1C199260E0000B70FC /* OrderedJobsKataTests */,
+				7208AEF7199260E0000B70FC /* Frameworks */,
+				7208AEF6199260E0000B70FC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7208AEF6199260E0000B70FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7208AEF5199260E0000B70FC /* OrderedJobsKata.app */,
+				7208AF16199260E0000B70FC /* OrderedJobsKataTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7208AEF7199260E0000B70FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7208AEF8199260E0000B70FC /* Cocoa.framework */,
+				7208AF17199260E0000B70FC /* XCTest.framework */,
+				7208AEFA199260E0000B70FC /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7208AEFA199260E0000B70FC /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7208AEFB199260E0000B70FC /* AppKit.framework */,
+				7208AEFC199260E0000B70FC /* CoreData.framework */,
+				7208AEFD199260E0000B70FC /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		7208AEFE199260E0000B70FC /* OrderedJobsKata */ = {
+			isa = PBXGroup;
+			children = (
+				7208AF0A199260E0000B70FC /* AppDelegate.h */,
+				7208AF0B199260E0000B70FC /* AppDelegate.m */,
+				7208AF0D199260E0000B70FC /* MainMenu.xib */,
+				7208AF10199260E0000B70FC /* Images.xcassets */,
+				7208AEFF199260E0000B70FC /* Supporting Files */,
+			);
+			path = OrderedJobsKata;
+			sourceTree = "<group>";
+		};
+		7208AEFF199260E0000B70FC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7208AF00199260E0000B70FC /* OrderedJobsKata-Info.plist */,
+				7208AF01199260E0000B70FC /* InfoPlist.strings */,
+				7208AF04199260E0000B70FC /* main.m */,
+				7208AF06199260E0000B70FC /* OrderedJobsKata-Prefix.pch */,
+				7208AF07199260E0000B70FC /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7208AF1C199260E0000B70FC /* OrderedJobsKataTests */ = {
+			isa = PBXGroup;
+			children = (
+				7208AF22199260E0000B70FC /* OrderedJobsKataTests.m */,
+				7208AF1D199260E0000B70FC /* Supporting Files */,
+			);
+			path = OrderedJobsKataTests;
+			sourceTree = "<group>";
+		};
+		7208AF1D199260E0000B70FC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7208AF1E199260E0000B70FC /* OrderedJobsKataTests-Info.plist */,
+				7208AF1F199260E0000B70FC /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7208AEF4199260E0000B70FC /* OrderedJobsKata */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7208AF26199260E0000B70FC /* Build configuration list for PBXNativeTarget "OrderedJobsKata" */;
+			buildPhases = (
+				7208AEF1199260E0000B70FC /* Sources */,
+				7208AEF2199260E0000B70FC /* Frameworks */,
+				7208AEF3199260E0000B70FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OrderedJobsKata;
+			productName = OrderedJobsKata;
+			productReference = 7208AEF5199260E0000B70FC /* OrderedJobsKata.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7208AF15199260E0000B70FC /* OrderedJobsKataTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7208AF29199260E0000B70FC /* Build configuration list for PBXNativeTarget "OrderedJobsKataTests" */;
+			buildPhases = (
+				7208AF12199260E0000B70FC /* Sources */,
+				7208AF13199260E0000B70FC /* Frameworks */,
+				7208AF14199260E0000B70FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7208AF1B199260E0000B70FC /* PBXTargetDependency */,
+			);
+			name = OrderedJobsKataTests;
+			productName = OrderedJobsKataTests;
+			productReference = 7208AF16199260E0000B70FC /* OrderedJobsKataTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7208AEED199260E0000B70FC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = de.mobile2b;
+				TargetAttributes = {
+					7208AF15199260E0000B70FC = {
+						TestTargetID = 7208AEF4199260E0000B70FC;
+					};
+				};
+			};
+			buildConfigurationList = 7208AEF0199260E0000B70FC /* Build configuration list for PBXProject "OrderedJobsKata" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7208AEEC199260E0000B70FC;
+			productRefGroup = 7208AEF6199260E0000B70FC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7208AEF4199260E0000B70FC /* OrderedJobsKata */,
+				7208AF15199260E0000B70FC /* OrderedJobsKataTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7208AEF3199260E0000B70FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7208AF03199260E0000B70FC /* InfoPlist.strings in Resources */,
+				7208AF11199260E0000B70FC /* Images.xcassets in Resources */,
+				7208AF09199260E0000B70FC /* Credits.rtf in Resources */,
+				7208AF0F199260E0000B70FC /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7208AF14199260E0000B70FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7208AF21199260E0000B70FC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7208AEF1199260E0000B70FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7208AF0C199260E0000B70FC /* AppDelegate.m in Sources */,
+				7208AF05199260E0000B70FC /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7208AF12199260E0000B70FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7208AF23199260E0000B70FC /* OrderedJobsKataTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7208AF1B199260E0000B70FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7208AEF4199260E0000B70FC /* OrderedJobsKata */;
+			targetProxy = 7208AF1A199260E0000B70FC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7208AF01199260E0000B70FC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7208AF02199260E0000B70FC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7208AF07199260E0000B70FC /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7208AF08199260E0000B70FC /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		7208AF0D199260E0000B70FC /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7208AF0E199260E0000B70FC /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		7208AF1F199260E0000B70FC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7208AF20199260E0000B70FC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7208AF24199260E0000B70FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7208AF25199260E0000B70FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		7208AF27199260E0000B70FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OrderedJobsKata/OrderedJobsKata-Prefix.pch";
+				INFOPLIST_FILE = "OrderedJobsKata/OrderedJobsKata-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7208AF28199260E0000B70FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OrderedJobsKata/OrderedJobsKata-Prefix.pch";
+				INFOPLIST_FILE = "OrderedJobsKata/OrderedJobsKata-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		7208AF2A199260E0000B70FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/OrderedJobsKata.app/Contents/MacOS/OrderedJobsKata";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OrderedJobsKata/OrderedJobsKata-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "OrderedJobsKataTests/OrderedJobsKataTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		7208AF2B199260E0000B70FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/OrderedJobsKata.app/Contents/MacOS/OrderedJobsKata";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OrderedJobsKata/OrderedJobsKata-Prefix.pch";
+				INFOPLIST_FILE = "OrderedJobsKataTests/OrderedJobsKataTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7208AEF0199260E0000B70FC /* Build configuration list for PBXProject "OrderedJobsKata" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7208AF24199260E0000B70FC /* Debug */,
+				7208AF25199260E0000B70FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7208AF26199260E0000B70FC /* Build configuration list for PBXNativeTarget "OrderedJobsKata" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7208AF27199260E0000B70FC /* Debug */,
+				7208AF28199260E0000B70FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7208AF29199260E0000B70FC /* Build configuration list for PBXNativeTarget "OrderedJobsKataTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7208AF2A199260E0000B70FC /* Debug */,
+				7208AF2B199260E0000B70FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7208AEED199260E0000B70FC /* Project object */;
+}
