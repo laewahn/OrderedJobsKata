@@ -7,28 +7,77 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "JobQueue.h"
 
-@interface OrderedJobsKataTests : XCTestCase
 
+@interface OrderedJobsKataTests : XCTestCase {
+	JobQueue* testQueue;
+	NSString* someJob;
+	NSString* someOtherJob;
+}
 @end
 
 @implementation OrderedJobsKataTests
 
 - (void)setUp
 {
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+	testQueue = [[JobQueue alloc] init];
+	someJob = @"a";
+	someOtherJob = @"b";
 }
 
-- (void)tearDown
+- (void)testIndependentJobCanBeAdded
 {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
+	[testQueue addJob:someJob];
+	
+	XCTAssertEqualObjects([testQueue scheduledJobs], someJob, @"Only the one job should be scheduled.");
 }
 
-- (void)testExample
+- (void)testMultipleIndependentJobsAreOrderedFIFO
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+	[testQueue addJob:someJob];
+	[testQueue addJob:someOtherJob];
+	
+	XCTAssertEqualObjects(@"ab", [testQueue scheduledJobs]);
+}
+
+- (void)testJobsAreUnique
+{
+    [testQueue addJob:someJob];
+	[testQueue addJob:someJob];
+	
+	XCTAssertEqualObjects([testQueue scheduledJobs], someJob);
+}
+
+- (void)testDependenciesAreAddedAsNewJobsIfNotAlreadyThere
+{
+	NSString* dependencyJob = @"c";
+
+	[testQueue addJob:someJob];
+    [testQueue addJob:someOtherJob dependingOnJob:dependencyJob];
+	
+	XCTAssertEqualObjects(@"acb", [testQueue scheduledJobs]);
+}
+
+- (void)testDependenciesAreResolvedWhenAddingNewDependentJob
+{
+    [testQueue addJob:someJob]; // a
+	[testQueue addJob:someOtherJob]; // ab
+	
+	[testQueue addJob:@"c" dependingOnJob:someJob]; // acb
+	
+	XCTAssertEqualObjects(@"acb", [testQueue scheduledJobs]);
+}
+
+- (void)testDependenciesAreResolvedWhenDeclaredForExistingJobs
+{
+    [testQueue addJob:someJob];
+	[testQueue addJob:someOtherJob];
+	[testQueue addJob:@"c"]; // abc
+	
+	[testQueue job:someJob dependsOnJob:@"c	"]; // cab
+	
+	XCTAssertEqualObjects([testQueue scheduledJobs], @"cab");
 }
 
 @end
