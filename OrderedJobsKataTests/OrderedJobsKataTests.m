@@ -7,28 +7,57 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "JobQueue.h"
 
-@interface OrderedJobsKataTests : XCTestCase
-
+@interface OrderedJobsKataTests : XCTestCase {
+    JobQueue* testQueue;
+}
 @end
 
 @implementation OrderedJobsKataTests
 
 - (void)setUp
 {
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    testQueue = [[JobQueue alloc] init];
 }
 
-- (void)tearDown
+- (void)testSimpleJobShouldBeQueued
 {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
+    [testQueue addJob:@"a"];
+    
+    XCTAssertEqualObjects([testQueue scheduledJobs], @"a");
 }
 
-- (void)testExample
+- (void)testIndependentJobsAreQueuedFiFo
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    [testQueue addJob:@"a"];
+    [testQueue addJob:@"b"];
+    
+    XCTAssertEqualObjects([testQueue scheduledJobs], @"ab");
+}
+
+- (void)testJobsAreQueuedBeforeTheirDependency
+{
+    [testQueue addJob:@"a"];
+    [testQueue addJob:@"b" dependingOn:@"a"];
+    
+    XCTAssertEqualObjects([testQueue scheduledJobs], @"ba");
+}
+
+- (void)testDependenciesAreAddedWhenNotAlreadyRegistered
+{
+    [testQueue addJob:@"a" dependingOn:@"b"];
+    
+    XCTAssertEqualObjects([testQueue scheduledJobs], @"ab");
+}
+
+- (void)testForTransitiveDependencies
+{
+    [testQueue addJob:@"c"];
+    [testQueue addJob:@"a" dependingOn:@"b"];
+    [testQueue addJob:@"b" dependingOn:@"c"];
+    
+    XCTAssertEqualObjects([testQueue scheduledJobs], @"abc");
 }
 
 @end

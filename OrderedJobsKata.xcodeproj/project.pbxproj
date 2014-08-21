@@ -18,6 +18,7 @@
 		7208AF19199260E0000B70FC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7208AEF8199260E0000B70FC /* Cocoa.framework */; };
 		7208AF21199260E0000B70FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7208AF1F199260E0000B70FC /* InfoPlist.strings */; };
 		7208AF23199260E0000B70FC /* OrderedJobsKataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7208AF22199260E0000B70FC /* OrderedJobsKataTests.m */; };
+		7238976619A5023300BA6873 /* JobQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7238976519A5023300BA6873 /* JobQueue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		7208AF1E199260E0000B70FC /* OrderedJobsKataTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OrderedJobsKataTests-Info.plist"; sourceTree = "<group>"; };
 		7208AF20199260E0000B70FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7208AF22199260E0000B70FC /* OrderedJobsKataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderedJobsKataTests.m; sourceTree = "<group>"; };
+		7238976419A5023300BA6873 /* JobQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobQueue.h; sourceTree = "<group>"; };
+		7238976519A5023300BA6873 /* JobQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobQueue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 		7208AEFE199260E0000B70FC /* OrderedJobsKata */ = {
 			isa = PBXGroup;
 			children = (
+				7238976419A5023300BA6873 /* JobQueue.h */,
+				7238976519A5023300BA6873 /* JobQueue.m */,
 				7208AF0A199260E0000B70FC /* AppDelegate.h */,
 				7208AF0B199260E0000B70FC /* AppDelegate.m */,
 				7208AF0D199260E0000B70FC /* MainMenu.xib */,
@@ -254,6 +259,7 @@
 			files = (
 				7208AF0C199260E0000B70FC /* AppDelegate.m in Sources */,
 				7208AF05199260E0000B70FC /* main.m in Sources */,
+				7238976619A5023300BA6873 /* JobQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +472,7 @@
 				7208AF28199260E0000B70FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7208AF29199260E0000B70FC /* Build configuration list for PBXNativeTarget "OrderedJobsKataTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +481,7 @@
 				7208AF2B199260E0000B70FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
