@@ -8,27 +8,79 @@
 
 #import <XCTest/XCTest.h>
 
-@interface OrderedJobsKataTests : XCTestCase
+#import "JobQueue.h"
 
+@interface OrderedJobsKataTests : XCTestCase {
+    JobQueue* testQueue;
+    
+    NSString* jobA;
+    NSString* jobB;
+}
 @end
 
 @implementation OrderedJobsKataTests
 
 - (void)setUp
 {
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    testQueue = [[JobQueue alloc] init];
+    
+    jobA = @"a";
+    jobB = @"b";
 }
 
-- (void)tearDown
+- (void)testEmptyQueueReturnsEmptyString
 {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
+    XCTAssert([testQueue scheduledJobs], @"");
 }
 
-- (void)testExample
+- (void)testAddOneJob
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    [testQueue addJob:jobA];
+    
+    XCTAssertEqualObjects([testQueue scheduledJobs], jobA);
+}
+
+- (void)testIndependentJobsAreScheduledAfterAnother
+{
+    NSString* firstJob = jobA;
+    NSString* secondJob = jobB;
+    
+    [testQueue addJob:firstJob];
+    [testQueue addJob:secondJob];
+    
+    [self assertThatJob:firstJob isScheduledBefore:secondJob];
+}
+
+- (void)testDependenciesAreScheduledBeforeTheirJob
+{
+    [testQueue addJob:jobB dependsOn:jobA];
+    [self assertThatJob:jobA isScheduledBefore:jobB];
+}
+
+- (void)testDependenciesAreScheduledBeforeTheirJobIfJobExists
+{
+    [testQueue addJob:jobB];
+    [testQueue addJob:jobA dependsOn:jobB];
+}
+
+- (void)testJobsWithDependencyAreScheduledAfterTheirDependencyIfDependencyExists
+{
+    [testQueue add]
+}
+
+- (void)testJobsAreNotScheduledTwice
+{
+    NSString* aJob = @"a";
+    
+    [testQueue addJob:aJob];
+    [testQueue addJob:aJob];
+    
+    XCTAssertEqualObjects([testQueue scheduledJobs], aJob);
+}
+
+- (void) assertThatJob:(NSString *)firstJob isScheduledBefore:(NSString *)secondJob
+{
+    XCTAssertTrue([[testQueue scheduledJobs] rangeOfString:firstJob].location < [[testQueue scheduledJobs] rangeOfString:secondJob].location);
 }
 
 @end
