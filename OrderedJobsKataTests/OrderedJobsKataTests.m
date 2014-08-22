@@ -60,12 +60,29 @@
 - (void)testDependenciesAreScheduledBeforeTheirJobIfJobExists
 {
     [testQueue addJob:jobB];
-    [testQueue addJob:jobA dependsOn:jobB];
+    [testQueue addJob:jobB dependsOn:jobA];
+    
+    [self assertThatJob:jobA isScheduledBefore:jobB];
 }
 
-- (void)testJobsWithDependencyAreScheduledAfterTheirDependencyIfDependencyExists
+- (void)testJobsAreScheduledAfterTheirDependencyIfDependencyExists
 {
-    [testQueue add]
+    [testQueue addJob:jobA];
+    [testQueue addJob:jobB dependsOn:jobA];
+    
+    [self assertThatJob:jobA isScheduledBefore:jobB];
+}
+
+- (void)testCircularDependenciesAreResolved
+{
+    NSString* jobC = @"c";
+    
+    [testQueue addJob:jobC];
+    [testQueue addJob:jobB dependsOn:jobA];
+    [testQueue addJob:jobC dependsOn:jobB];
+    
+    [self assertThatJob:jobA isScheduledBefore:jobB];
+    [self assertThatJob:jobB isScheduledBefore:jobC];
 }
 
 - (void)testJobsAreNotScheduledTwice

@@ -40,6 +40,20 @@
 
 - (void)addJob:(NSString *)aJob dependsOn:(NSString *)dependency
 {
+    NSRange rangeOfJob = [self.jobs rangeOfString:aJob];
+    if (rangeOfJob.location != NSNotFound) {
+        
+        NSRange rangeOfDependency = [self.jobs rangeOfString:dependency];
+        if (rangeOfDependency.location == NSNotFound) {
+            NSString* updatedJobs = [self.jobs stringByReplacingCharactersInRange:rangeOfJob withString:[dependency stringByAppendingString:aJob]];
+            [self setJobs:updatedJobs];
+        } else {
+            NSString* updatedJobs = [self.jobs stringByReplacingOccurrencesOfString:aJob withString:@""];
+            updatedJobs = [updatedJobs stringByReplacingOccurrencesOfString:dependency withString:[dependency stringByAppendingString:aJob]];
+            [self setJobs:updatedJobs];
+        }
+    }
+    
     [self addJob:dependency];
     [self addJob:aJob];
 }
